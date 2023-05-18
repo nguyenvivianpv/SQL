@@ -1,0 +1,27 @@
+--Create a clothing store database
+CREATE TABLE clothing (id INTEGER PRIMARY KEY, item TEXT, color TEXT, price INTEGER, quantity INTEGER);
+
+INSERT INTO clothing VALUES (1,"tshirt","red",5,10);
+INSERT INTO clothing VALUES (2,"blouse","pink",10,10);
+INSERT INTO clothing VALUES (3,"tanktop","white",5,14);
+INSERT INTO clothing VALUES (4,"longsleevetop","black",5,15);
+INSERT INTO clothing VALUES (5,"vest","gray",10,5);
+INSERT INTO clothing VALUES (6,"pants","brown",15,15);
+INSERT INTO clothing VALUES (7,"jeans","blue",40,16);
+INSERT INTO clothing VALUES (8,"shorts","blue",30,12);
+INSERT INTO clothing VALUES (9,"miniskirt","black",13,14);
+INSERT INTO clothing VALUES (10,"midiskirt","maroon",14,9);
+INSERT INTO clothing VALUES (11,"maxiskirt","green",15,13);
+INSERT INTO clothing VALUES (12,"socks","black",3,20);
+INSERT INTO clothing VALUES (13,"tie","blue",12,7);
+INSERT INTO clothing VALUES (14,"dress","purple",16,9);
+INSERT INTO clothing VALUES (15,"leggings","black",14,6);
+
+--display the database ordered by price. 
+SELECT * FROM clothing
+order by price asc;
+
+-- display items that are lowest in supply to account for next restock
+SELECT item, price, quantity
+FROM clothing
+order by quantity ascending
